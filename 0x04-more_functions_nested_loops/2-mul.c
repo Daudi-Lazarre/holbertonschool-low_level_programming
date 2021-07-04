@@ -14,7 +14,4 @@ int mul(int a, int b)
  */
 	int p = a * b;
 		return (p);
-	}
-	else
-		return (0);
 }
