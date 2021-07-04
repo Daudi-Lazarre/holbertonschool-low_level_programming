@@ -12,12 +12,7 @@ int mul(int a, int b)
 /*
  * This stands for product
  */
-	int p;
-
-	if (a * b)
-	{
-		p = a * b;
-
+	int p = a * b;
 		return (p);
 	}
 	else
