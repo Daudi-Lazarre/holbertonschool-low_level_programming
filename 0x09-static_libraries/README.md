@@ -1,0 +1,1 @@
+Today's project is about static libraries, which seem pretty simple in theory.
