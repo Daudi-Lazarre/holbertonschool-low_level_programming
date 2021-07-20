@@ -10,10 +10,10 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int x = 0;
-	int y = 0;
-	int s1len;
-	int s2len;
+	unsigned int x = 0;
+	unsigned int y = 0;
+	unsigned int s1len;
+	unsigned int s2len;
 	char *res;
 
 	if (s1 == NULL)
