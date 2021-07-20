@@ -1,42 +1,44 @@
-#include <stdlib.h>
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * str_concat - Concatenate two strings
- * @s1: First string
- * @s2: Second string
- * Return: Concatenated string
+ * str_concat - concatenates two strings
+ * @s1: string 1
+ * @s2: string 2
+ * Return: pointer to the two concatendated strings, otherwise NULL
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int x = 0;
-	unsigned int y = 0;
-	unsigned int s1len;
-	unsigned int s2len;
-	char *res;
 
-	if (s1 == NULL)
+	char *cat_string; /* Concatenated string */
+	int size1 = 0; /* First string size */
+	int size2 = 0; /* Second string size */
+	int x; /* This is for the incrememnt */
+
+	while (s1 == NULL)
 		s1 = "";
-	if (s2 == NULL)
+	while (s2 == NULL)
 		s2 = "";
-	for (s1len = 0; s1[s1len]; s1len++)
-		continue;
-	for (s2len = 0; s2[s2len]; s2len++)
-		continue;
-	res = malloc((s1len + s2len) * sizeof(char) + 1);
-	if (res != NULL)
-		while (x <= s1len + s2len)
-		{
-			if (x < s1len)
-				res[x] = s1[x];
-			else if (x >= s1len)
-			{
-				res[x] = s2[y];
-				y++;
-			}
-			x++;
-		}
-		return (res);
-	return (NULL);
+	while (s1[size1] != '\0')
+		size1++;
+	while (s2[size2] != '\0')
+		size2++;
+
+	cat_string = malloc((size1 + size2 + 1) * sizeof(char));
+	if (cat_string == NULL)
+		return (cat_string);
+
+	for (x = 0; x < size1; x++)
+	{
+		cat_string[x] = s1[x];
+	}
+
+	for (; x < (size1 + size2); x++)
+	{
+		cat_string[x] = s2[x - size1];
+	}
+	cat_string[x] = '\0';
+	return (cat_string);
 }
