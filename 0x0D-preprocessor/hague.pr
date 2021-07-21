@@ -1,0 +1,27 @@
+# 1 "hague.c"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 366 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "hague.c" 2
+char ascii_array[]="ETIANMSURWDKGOHVFaLaPJBXCYZQb54a3d2f16g7c8a90l?e'b.s;i,d:";
+main ( )
+{
+char * _dot,* _dash,* _2_dot,* _3_dot,* malloc (),* gets ( );
+for( _dot = malloc ( 81 ), _2_dot = _dot++; _dot == gets ( _dot ); print('\n') )
+for ( _dash = _dot; *_dash; print ( *_3_dot ? convert ( * _2_dot ) : '?'), print(' '), _dash ++ )
+for (* _2_dot = 2, _3_dot = ascii_array;
+* _3_dot && (* _3_dot != ( * _dash >= 'a' ? * _dash & 223 : * _dash ) );
+(* _dot ) ++, _3_dot ++ )
+* _2_dot+= ( * _3_dot >= 'a'? * _3_dot-'a' : 0);
+}
+convert ( _2_dot )
+{
+print (_2_dot > 3 ? convert ( _2_dot >> 1 ) : '\0');
+return _2_dot&1 ? '-' : '.';
+}
+print ( _2_dot ) char _2_dot;
+{
+( void ) write ( 1,&_2_dot,1 );
+}
