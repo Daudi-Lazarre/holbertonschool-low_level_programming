@@ -9,9 +9,6 @@ I am* @d: pointer Dog pointer (lol not the breed, silly rabbit)
 
 void print_dog(struct dog *d)
 {
-	if d == NULL
-		printf("(nil)");
-
 	if (d != NULL)
 		return;
 
