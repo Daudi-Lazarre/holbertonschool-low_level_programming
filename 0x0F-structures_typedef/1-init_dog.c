@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "dog.h"
 
 /**
 * struct dog - doggoe description
