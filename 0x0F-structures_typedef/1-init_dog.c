@@ -3,6 +3,7 @@
 
 /**
 * struct dog - doggoe description
+* @d: pointer to structure
 * @name: doggoe name
 * @age: doggoe age
 * @owner: of doggoe
