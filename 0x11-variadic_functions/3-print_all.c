@@ -1,48 +1,75 @@
 #include "variadic_functions.h"
-
 /**
- * print_all - prints anything
- * @format: list of types of arguments passed to the function
- */
+* printchar - prints a char
+* @arg: the argument to print
+*/
+void printchar(va_list arg)
+{
+	printf("%c", va_arg(arg, int));
+}
+/**
+* printint - prints an int
+* @arg: the argument to print
+*/
+void printint(va_list arg)
+{
+	printf("%d", va_arg(arg, int));
+}
+/**
+* printfloat - prints float
+* @arg: the argument to print
+*/
+void printfloat(va_list arg)
+{
+	printf("%f", va_arg(arg, double));
+}
+/**
+* printstr - prints str
+* @arg: the argument to print
+*/
+void printstr(va_list arg)
+{
+	char *s;
+
+	s = va_arg(arg, char *);
+	if (s == NULL)
+		s = "(nil)";
+	printf("%s", s);
+}
+/**
+* print_all - prints any kind of data
+* @format: formatting string
+*/
 void print_all(const char * const format, ...)
 {
-	int i = 0;
-	char *str, *sep = "";
+	char *separator = "";
+	unsigned int x = 0, n = 0;
+	va_list valist;
 
-	va_list list;
+	print_t function[] = {
+		{'c', printchar},
+		{'i', printint},
+		{'f', printfloat},
+		{'s', printstr},
+		{'\0', NULL}
+	};
 
-	va_start(list, format);
-
-	if (format)
+	va_start(valist, format);
+	while (format && format[x] != '\0')
 	{
-		while (format[i])
+		while (function[n].letter != '\0')
 		{
-			switch (format[i])
+			if (format[x] == function[n].letter)
 			{
-				case 'c':
-					printf("%s%c", sep, va_arg(list, int));
-					break;
-				case 'i':
-					printf("%s%d", sep, va_arg(list, int));
-					break;
-				case 'f':
-					printf("%s%f", sep, va_arg(list, double));
-					break;
-				case 's':
-					str = va_arg(list, char *);
-					if (!str)
-						str = "(nil)";
-					printf("%s%s", sep, str);
-					break;
-				default:
-					i++;
-					continue;
+				printf("%s", separator);
+				function[n].f(valist);
+				separator = ", ";
 			}
-			sep = ", ";
-			i++;
+			n++;
 		}
+		n = 0;
+		x++;
 	}
-
 	printf("\n");
-	va_end(list);
+	va_end(valist);
 }
