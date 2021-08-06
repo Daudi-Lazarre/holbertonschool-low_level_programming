@@ -12,19 +12,20 @@ size_t print_list(const list_t *h)
 	size_t num = 0;
 
 
-	/* Increment through num && hop to the next pointer when... */
-	/* the node pointer is not the last one */
+	/* While h exists, */
+	/* if the head node with string data is comparable to NULL, */
 	/* If the string node is NULL, print this. */
 	/* In all other cases, print the node digit and string. */
 
-	if (h != NULL)
+	while (h)
 	{
-		if (h-str == NULL)
+		if (h->str == NULL)
 			printf("[0] (nil)\n");
 		else
 			printf("[%d] %s\n", h->len, h->str);
-		return(num);
+
+		num++;
+		h = h->next;
 	}
-	else
-		return (num);
+	return(num);
 }
