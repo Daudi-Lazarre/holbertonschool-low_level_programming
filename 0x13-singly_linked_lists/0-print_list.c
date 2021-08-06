@@ -16,8 +16,7 @@ size_t print_list(const list_t *h)
 	/* the node pointer is not the last one */
 	/* If the string node is NULL, print this. */
 	/* In all other cases, print the node digit and string. */
-	do
-	{
+	do {
 		num++;
 		h = h->next;
 	}
