@@ -16,5 +16,5 @@ size_t list_len(const list_t *h)
 		h = h->next;
 	}
 	/* Go through the linked list and increment the number */
-	return (num);
+	return (node_num);
 }
