@@ -21,7 +21,7 @@ size_t print_list(const list_t *h)
 		num++;
 		h = h->next;
 	}
-	return(num);
+	return (num);
 /* if the head string is identical to NULL, print this. If not, then this. */
 /* increment through the linked list */
 /* return num */
