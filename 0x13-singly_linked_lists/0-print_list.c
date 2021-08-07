@@ -11,13 +11,7 @@ size_t print_list(const list_t *h)
 {
 	size_t num = 0;
 
-
-	/* While h exists, */
-	/* if the head node with string data is comparable to NULL, */
-	/* If the string node is NULL, print this. */
-	/* In all other cases, print the node digit and string. */
-
-	while (h)
+	while (h) /* When h exists*/
 	{
 		if (h->str == NULL)
 			printf("[0] (nil)\n");
@@ -28,4 +22,7 @@ size_t print_list(const list_t *h)
 		h = h->next;
 	}
 	return(num);
+/* if the head string is identical to NULL, print this. If not, then this. */
+/* increment through the linked list */
+/* return num */
 }
