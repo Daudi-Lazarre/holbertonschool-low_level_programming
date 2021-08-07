@@ -10,10 +10,11 @@ size_t list_len(const list_t *h)
 {
 	size_t node_num = 0;
 
-	while (h) /* When h exists*/
+	while (h != NULL) /* When h looks like NULL */
 	{
 		node_num++;
 		h = h->next;
 	}
+	/* Go through the linked list and increment the number */
 	return (num);
 }
