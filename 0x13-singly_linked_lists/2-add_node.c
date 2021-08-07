@@ -28,10 +28,10 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t *newKidOnTheBlock;
 
-	newKidOnTheBlock = (list_t *)malloc(sizeof(list_t));
-
 	if (str == NULL && newKidOnTheBlock == NULL)
 		return (NULL);
+
+	newKidOnTheBlock = (list_t *)malloc(sizeof(list_t));
 
 	newKidOnTheBlock->str = strdup(str);
 	newKidOnTheBlock->len = _strlen(str);
