@@ -3,6 +3,7 @@
 /**
  * free_listint2 - free list
  * @head: pointer to head
+ * Return: Return
  */
 
 void free_listint2(listint_t **head)
