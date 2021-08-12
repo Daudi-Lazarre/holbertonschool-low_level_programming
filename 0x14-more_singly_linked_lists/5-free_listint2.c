@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdlib.h>
-
 /**
  * free_listint2 - free list
  * @head: pointer to head
