@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - new node whenever and wherever you want, or your money back
+ * insert_nodeint_at_index - new node whenever and wherever you want,
+ * or your money back
  * @head: head
  * @index: insert here
  * @n: the number value
@@ -12,7 +13,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
 {
 	listint_t *thisOne;
-	listin_t *newNode;
+	listint_t *newNode;
 
 	thisOne = *head;
 	newNode = malloc(sizeof(listint_t));
