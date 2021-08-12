@@ -4,6 +4,7 @@
 /**
  * free_listint - Free everything
  * @head: Tip of the list
+ * Return: Free the space
  */
 
 void free_listint(listint_t *head)
