@@ -1,35 +1,54 @@
 #include "holberton.h"
+/**
+ * _pow - integer that to the nth power
+ * @a: conversion variable
+ * @b: exponent
+ * Return: the result
+ */
+unsigned int _pow(unsigned int a, unsigned int b)
+{
+	unsigned int i;
+	unsigned int res = 1;
+
+	if (b == 0)
+	{
+		return (1);
+	}
+	for (i = 1; i <= b; i++)
+	{
+		res = res * a;
+	}
+	return (res);
+}
 
 /**
-* binary_to_uint - Convert binary into unsigned integer
-* @b: Convert this to binary number
-* Return: Unsigned integer
-*/
-
+ * binary_to_uint - binary to unsigned int
+ * @b: Binary string
+ * Return: the result
+ */
 unsigned int binary_to_uint(const char *b)
 {
-	int i = 0;
-	int len = 0;
-	unsigned int num = 0;
-	int z = 0;
-	int a = 1;
+	unsigned int binaryLength;
+	unsigned int iterate;
+	unsigned int result = 0;
+	unsigned int power;
 
-	if (b == NULL)
+	if (binaryLength == NULL)
 		return (0);
-
-	for (len = 0; b[len] != '\0'; len++)
+	for (binaryLength = 0; b[binaryLength]; binaryLength++)
+		continue;
+	power = binaryLength - 1;
+	for (iterate = 0; iterate < binaryLength; iterate++)
 	{
-		for (num = len - 1; i >= 0; i--)
+		if (b[iterate] == '1')
 		{
-			if (b[i] != '0' && b[i] != '1')
-			{
-				return (0;)
-			}
-			if (b[i] == '1')
-			{
-				z += a;
-			}
-			a = a * 2;
+			result = result + _pow(2, power);
 		}
-		return (z);
+		else if (b[iterate] != '0')
+		{
+			return (0);
+		}
+		power--;
 	}
+	return (result);
+}
